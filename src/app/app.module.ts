@@ -14,6 +14,7 @@ import { HttpClientModule } from "@angular/common/http";
 
 //importar rutas
 import { ROUTES } from './app.routes';
+import { LoadingComponent } from './components/shared/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -21,13 +22,14 @@ import { ROUTES } from './app.routes';
     HomeComponent,
     SearchComponent,
     ArtistaComponent,
-    NavbarComponent
+    NavbarComponent,
+    LoadingComponent
   ],
 
   //si dice module va aca
   imports: [
     BrowserModule,
-    // http get paises
+    // http get paises y tambien el services spotify
     HttpClientModule,
     RouterModule.forRoot( ROUTES, {useHash: true})
   ],
