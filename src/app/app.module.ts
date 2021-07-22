@@ -9,6 +9,9 @@ import { SearchComponent } from './components/search/search.component';
 import { ArtistaComponent } from './components/artista/artista.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 
+//para poder hacer peticiones HTTP (http get paises)
+import { HttpClientModule } from "@angular/common/http";
+
 //importar rutas
 import { ROUTES } from './app.routes';
 
@@ -20,8 +23,12 @@ import { ROUTES } from './app.routes';
     ArtistaComponent,
     NavbarComponent
   ],
+
+  //si dice module va aca
   imports: [
     BrowserModule,
+    // http get paises
+    HttpClientModule,
     RouterModule.forRoot( ROUTES, {useHash: true})
   ],
   providers: [],

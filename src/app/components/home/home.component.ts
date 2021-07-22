@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,8 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  
+  
+  
+  
+  // http get paises
+  paises: any [] =[]
 
-  constructor() { }
+  constructor( private http: HttpClient ) { 
+
+    this.http.get('https://restcountries.eu/rest/v2/lang/es')
+      .subscribe( (resp: any) => {
+        this.paises = resp;
+        console.log(resp);
+      })
+   }
 
   ngOnInit(): void {
   }
